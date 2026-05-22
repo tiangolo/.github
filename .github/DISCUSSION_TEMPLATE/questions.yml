@@ -1,0 +1,100 @@
+labels: [question]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in this project! 🚀
+
+        Please follow these instructions, step by step, that way it will be easier to help you. 🙏
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: First Check
+      description: Please confirm and check all the following options.
+      options:
+        - label: I added a very descriptive title here.
+          required: true
+        - label: I used the GitHub search to find a similar question and didn't find it.
+          required: true
+        - label: I searched the documentation, with the integrated search.
+          required: true
+        - label: I already searched in Google "How to X" and didn't find any information.
+          required: true
+        - label: I already read and followed all the tutorials in the docs and didn't find an answer.
+          required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Example Code
+      description: |
+        Please add a self-contained, [minimal, reproducible, example](https://stackoverflow.com/help/minimal-reproducible-example) with your use case.
+
+        If I (or someone) can copy it, run it, and see it right away, there's a much higher chance I (or someone) will be able to help you.
+
+      placeholder: |
+        import os
+
+        TELEPORT_ENABLED = os.environ.get("TELEPORT_ENABLED")
+
+        if __name__ == "__main__":
+            print(f"TELEPORT_ENABLED: {TELEPORT_ENABLED}")
+      render: python
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        What is the problem, question, or error?
+
+        Write a short description telling me what you are doing, what you expect to happen, and what is currently happening.
+      placeholder: |
+        * Create a small app with a teleport environment variable.
+        * Run the app with `TELEPORT_ENABLED=true python app.py`.
+        * I expected to be teleported, but I wasn't.
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: What operating system are you on?
+      multiple: true
+      options:
+        - Linux
+        - Windows
+        - macOS
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: os-details
+    attributes:
+      label: Operating System Details
+      description: You can add more details about your operating system here, in particular if you chose "Other".
+  - type: input
+    id: project-version
+    attributes:
+      label: Project Version
+      description: |
+        What version of the project are you using?
+    validations:
+      required: true
+  - type: input
+    id: python-version
+    attributes:
+      label: Python Version
+      description: |
+        What Python version are you using? (if using Python)
+
+        You can find the Python version with:
+
+        ```bash
+        python --version
+        ```
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Add any additional context information or screenshots you think are useful.
