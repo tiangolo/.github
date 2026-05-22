@@ -1,1 +1,1 @@
-# .github
+# GitHub defaults
